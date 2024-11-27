@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :customers
-  # Checkout Routes - Keep the resourceful route
-  resources :checkout, only: [:new, :create]
+  
 
   # Health check route (optional)
   get "up" => "rails/health#show", as: :rails_health_check
@@ -52,6 +50,16 @@ Rails.application.routes.draw do
   get '/orders/:order_id/payment', to: 'payments#show'  # Show payment for an order
   post '/orders/:order_id/payment', to: 'payments#create'  # Create a payment for an order
   put '/payments/:id', to: 'payments#update'  # Update a payment
+
+
+   # Define route for viewing the cart (show action)
+   get '/cart', to: 'cart#show', as: 'cart'
+
+   # Route to add a product to the cart (post request)
+   post '/cart/add/:product_id', to: 'cart#add', as: 'add_to_cart'
+ 
+   # Route to remove a product from the cart (delete request)
+   delete '/cart/remove/:product_id', to: 'cart#remove', as: 'remove_from_cart'
 
   # Admin Authentication Routes
   get '/admin/session/new', to: 'admin/sessions#new', as: 'login'
