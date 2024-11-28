@@ -1,22 +1,24 @@
-class Admin::SessionsController < ApplicationController
-  def new
-    # This will render the login form
-  end
-
-  def create
-    @admin = Admin.find_by(username: params[:username])
-
-    if @admin&.authenticate(params[:password])
-      session[:admin_id] = @admin.id
-      redirect_to admin_dashboard_path
-    else
-      flash[:alert] = "Invalid username or password"
-      render :new
+module Admin
+  class SessionsController < ApplicationController
+    def new
+      # This will render the login form
     end
-  end
 
-  def destroy
-    session[:admin_id] = nil
-    redirect_to root_path
+    def create
+      @admin = Adminuser.find_by(username: params[:username])
+
+      if @admin&.authenticate(params[:password])
+        session[:admin_id] = @admin.id
+        redirect_to admin_dashboard_path
+      else
+        flash[:alert] = "Invalid username or password"
+        render :new
+      end
+    end
+
+    def destroy
+      session[:admin_id] = nil
+      redirect_to root_path
+    end
   end
 end

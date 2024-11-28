@@ -5,7 +5,7 @@
 #   end
 # Seed Categories
 
-Admin.create(username: "admin", password: "password")
+Adminuser.create(username: "admin", password: "password")
 
 categories = [
   { id: 1, category_name: "Food",
