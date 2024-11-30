@@ -77,5 +77,5 @@ Rails.application.routes.draw do
   delete '/admin/products/:id', to: 'admin/products#destroy', as: 'destroy_admin_product'
 
   # Root route for the application (this could be for products or the admin dashboard)
-  root 'products#index'  # Default root route for customers viewing products
+  root 'products#index', as: 'rooot'  # Default root route for customers viewing products
 end

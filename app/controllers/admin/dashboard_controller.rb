@@ -1,13 +1,15 @@
-class Admin::DashboardController < ApplicationController
-  before_action :require_admin_login
+module Admin
+  class DashboardController < ApplicationController
+    before_action :require_admin_login
 
-  def index
-    # Dashboard content
-  end
+    def index
+      # Dashboard content
+    end
 
-  private
+    private
 
-  def require_admin_login
-    redirect_to login_path unless session[:admin_id]
+    def require_admin_login
+      redirect_to login_path unless session[:admin_id]
+    end
   end
 end
