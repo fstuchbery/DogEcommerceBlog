@@ -61,6 +61,8 @@ Rails.application.routes.draw do
    # Route to remove a product from the cart (delete request)
    delete '/cart/remove/:product_id', to: 'cart#remove', as: 'remove_from_cart'
 
+   post '/cart/checkout', to: 'cart#checkout', as: 'checkout'
+
   # Admin Authentication Routes
   get '/admin/session/new', to: 'admin/sessions#new', as: 'login'
   post '/admin/session', to: 'admin/sessions#create'

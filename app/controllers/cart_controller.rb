@@ -25,6 +25,33 @@ class CartController < ApplicationController
   def initialize_cart
     session[:cart] ||= {}
   end
+  def checkout
+    # Creates an order with the current date and the total price of the cart
+    @order = Order.create(
+      customer_id: 1,
+      order_date: Date.today,
+      order_status: 'Pending',  # for the time being, this order is in the pending stage.
+      total_price: cart_total,
+      payment_status: 'Unpaid'  
+    )
+
+    # Create order items for each product in the cart
+    session[:cart].each do |product_id, quantity|
+      product = Product.find(product_id)
+      @order.order_items.create(
+        product: product,
+        quantity: quantity,
+        price_per_unit: product.price,
+        total_price: product.price * quantity
+      )
+    end
+
+    # Clear the cart after the order is created
+    session[:cart] = {}
+
+    # Redirect to the order show page with a success message
+    redirect_to order_path(@order), notice: "Order created successfully!"
+  end
 
   def update_cart(product)
     if session[:cart][product.id.to_s]

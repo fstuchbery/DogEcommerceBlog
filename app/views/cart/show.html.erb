@@ -31,5 +31,8 @@
 
   <h3>Total: <%= number_to_currency(@cart_items.sum { |item| item[:product].price * item[:quantity] }) %></h3>
 
+
+  <%= form_with url: checkout_cart_path, method: :post, local: true do |form| %>
+    <%= form.submit "Proceed to Checkout" %>
   
 <% end %>
