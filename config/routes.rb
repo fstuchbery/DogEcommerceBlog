@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # Category routes
   get '/categories', to: 'categories#index'  # List all categories
-  get '/categories/:id', to: 'categories#show'  # Show a specific category
+  get '/categories/:id', to: 'categories#show', as: 'category' # Show a specific category
 
   
 
