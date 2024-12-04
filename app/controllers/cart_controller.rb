@@ -25,6 +25,7 @@ class CartController < ApplicationController
   def initialize_cart
     session[:cart] ||= {}
   end
+
   def checkout
     # Creates an order with the current date and the total price of the cart
     @order = Order.create(
@@ -60,6 +61,8 @@ class CartController < ApplicationController
       session[:cart][product.id.to_s] = 1
     end
     # Remove product from the cart and more
+  end  # This closes the update_cart method
+
   def remove
     product = Product.find(params[:product_id])
     session[:cart].delete(product.id.to_s)
@@ -75,5 +78,4 @@ class CartController < ApplicationController
     end
     total
   end
-
 end
