@@ -32,9 +32,7 @@ class CartController < ApplicationController
     else
       session[:cart][product.id.to_s] = 1
     end
-  end
-
-  # Remove product from the cart and more
+    # Remove product from the cart and more
   def remove
     product = Product.find(params[:product_id])
     session[:cart].delete(product.id.to_s)
