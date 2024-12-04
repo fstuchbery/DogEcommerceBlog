@@ -39,4 +39,14 @@ class CartController < ApplicationController
 
     redirect_to cart_path, notice: "#{product.product_name} removed from cart!"
   end
+
+  def cart_total
+    total = 0
+    session[:cart].each do |product_id, quantity|
+      product = Product.find(product_id)
+      total += product.price * quantity
+    end
+    total
+  end
+
 end
