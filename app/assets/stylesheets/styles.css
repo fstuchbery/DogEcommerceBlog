@@ -20,12 +20,17 @@ h1 {
     }
   body {
     height: 1000px;
-    background: linear-gradient(to bottom, rgb(19, 19, 68), white);
+    background: linear-gradient(180deg, rgba(93,92,88,1) 0%, rgba(112,115,112,1) 42%, rgba(127,133,132,1) 63%, rgba(154,166,166,1) 100%);
+
+
   }
 
   a {
     text-decoration: none;
   }
+
+  
+
   p, label, h2 {
     color:#adabab;
   }
@@ -62,13 +67,15 @@ h1 {
     text-decoration: none;
   }
   .login-form {
-    background-color: #f7f7f7;
+    background-color: #7a7979;
     padding: 20px;
-    border: 1px solid #000;
+    border: 1px solid #d3d2d2;
     border-radius: 8px;
     width: 300px;
     margin: 0 auto;
   }
+
+  
 
   body .cart-container {
     width: 80%;              
