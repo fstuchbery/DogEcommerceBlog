@@ -1,5 +1,5 @@
 <h1>Login</h1>
-<%= form_with url: admin_session_path, local: true do |form| %>
+<%= form_with url: admin_session_path, local: true, html: { class: 'login-form' } do |form| %>
   <div>
     <%= form.label :username %>
     <%= form.text_field :username %>

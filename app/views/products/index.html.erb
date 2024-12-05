@@ -1,11 +1,15 @@
 <h1>Available Products</h1>
+<div class = "linksIndex">
 <%= link_to 'Cart', cart_path %>
-<br>
+
 <%= render 'shared/category_link' %>
-<br>
+
  <%= render 'shared/search_link' %>
- <br>
+
  <%= render 'shared/admin_link' %>
+</div>
+
+
 <ul>
   <% @products.each do |product| %>
     <li>
