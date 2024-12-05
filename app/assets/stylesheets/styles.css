@@ -4,6 +4,20 @@ h1 {
   }
 
 
+    
+    #searchBody {
+        margin-left: 30%;
+        padding: 15px 5px;
+        width: 45%;
+        border: 2px solid #adabab;
+    }
+
+    #productBody {
+        margin-left: 30%;
+        padding: 15px 5px;
+        width: 45%;
+        border: 2px solid #adabab;
+    }
   body {
     height: 1000px;
     background: linear-gradient(to bottom, rgb(19, 19, 68), white);
@@ -24,6 +38,16 @@ h1 {
   .linksIndex {
     justify-content: space-between;
     text-align: center;
+  }
+
+  .linksCats {
+    width: 40%;
+    margin-left: 46%;
+  }
+
+  #productsList {
+    width: 40%;
+    margin-left: 46%;
   }
 
   ul {

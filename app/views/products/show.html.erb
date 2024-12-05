@@ -1,4 +1,6 @@
+<div id = "productBody">
 <h1><%= @product.product_name %></h1>
 <p>Price: <%= @product.price %></p>
 <p><%= @product.description %></p>
 <%= button_to 'Add to Cart', add_to_cart_path(product_id: @product.id), method: :post %>
+</div>
