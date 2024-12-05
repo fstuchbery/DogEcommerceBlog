@@ -94,11 +94,11 @@ h1 {
   }
   
   .cart-container table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #adabab;
   }
   
   .cart-container th {
-    background-color: #f2f2f2;
+    background-color: #adabab;
   }
 
   
